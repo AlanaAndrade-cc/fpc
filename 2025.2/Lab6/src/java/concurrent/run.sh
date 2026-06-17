@@ -9,4 +9,11 @@ if [ "$#" -lt 1 ]; then
 fi
 
 # chama o programa java com os arg passados para o script bash
+echo "SOLUÇÃO INCOMPLETA"
 time java -cp $BASE_DIR/bin/ WebStatsMain "$@"
+
+echo -e "\nSOLUÇÃO COM SEMÁFORO"
+time java -cp $BASE_DIR/bin/ WebStatsSemaphoreMain "$@"
+
+echo -e "\nSOLUÇÃO COM VARIÁVEIS ATÔMICAS"
+time java -cp $BASE_DIR/bin/ WebStatsAtmVarMain "$@"
