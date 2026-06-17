@@ -1,0 +1,52 @@
+EXECUÇÕES:
+
+========= Estatisticas do Sistema =========
+Total de Acessos: 100
+Total de Compras: 29
+Total de Falhas: 30
+Total de acessos sem compras ou falhas: 41
+Usuarios Online: 0
+===========================================
+real	0m0.531s
+user	0m0.047s
+sys	0m0.033s
+
+========= Estatisticas do Sistema =========
+Total de Acessos: 500
+Total de Compras: 166
+Total de Falhas: 166
+Total de acessos sem compras ou falhas: 168
+Usuarios Online: 0
+===========================================
+real	0m0.561s
+user	0m0.080s
+sys	0m0.097s
+
+========= Estatisticas do Sistema =========
+Total de Acessos: 5000
+Total de Compras: 1686
+Total de Falhas: 1653
+Total de acessos sem compras ou falhas: 1661
+Usuarios Online: 2
+===========================================
+real	0m0.915s
+user	0m0.490s
+sys	0m0.502s
+
+========= Estatisticas do Sistema =========
+Total de Acessos: 4999
+Total de Compras: 1630
+Total de Falhas: 1721
+Total de acessos sem compras ou falhas: 1649
+Usuarios Online: -1
+===========================================
+real	0m0.883s
+user	0m0.484s
+sys	0m0.468s
+
+ANÁLISE:
+Como se comportam as estatísticas de total de acessos, compras, falhas, sem compras ou falhas e número de usuários online ao final da execução?
+R: Nas execuções com poucos usuários concorrentes (100 e 500), os resultados finais foram consistentes matematicamente. Porém ao aumentar o número de usuários (5000) as estatísticas finais apresentaram inconsistências, por exemplo o total de acessos ser menor do que o valor passado como parâmetro ou valor negativo para a quantidade de usuários online. Isso indica que incrementos foram perdidos e escritas sobrepostas.
+
+Esse é o comportamento desejado?
+R: Não. O esperado é que os resultados finais sejam coerentes com a carga aplicada ao sistema, independemente de qual ela for. Ou seja, o total de acessos seja, de fato, o total de usuários que acessaram (parâmetro inicial informado); que a soma das três categorias (compras, falhas, sem compras ou falhas) seja igual ao total de acessos; que, ao final do programa, o número de usuários online seja 0 (já que o sistema aguarda os usuários fazerem logout).
