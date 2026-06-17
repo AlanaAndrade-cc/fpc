@@ -1,0 +1,7 @@
+ANÁLISE:
+O que se espera de diferente em relação ao comportamento do código sem controle de concorrência?
+R: Que as estatísticas sejam coerentes e matematicamente consistentes com qualquer carga aplicada.
+
+- Total de Acessos, deve sempre ser o total de usuários que acessaram o sistema (parâmetro inicial informado);
+- Total de Compras, total de Falhas, total de acessos sem compras ou falhas, como cada usuário só pode se enquadrar em uma dessas três categorias, a soma delas deve ser igual ao total de acessos;
+- Usuários Online, como o programa sempre aguarda todas os usuários fazerem logout, é esperado que seja sempre igual a 0,
